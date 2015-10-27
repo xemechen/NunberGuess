@@ -33,80 +33,51 @@ namespace GuessNumberApplication
 
         public void CheckAnswer()
         {
-            
-                for (int index = 0; index < 3; index++)
+
+
+
+            if (guessGame.CanNumberChecked == true)
                 {
-
-                    for (int idx = index + 1; idx < 4; idx++)
-                    {
-                        if (GuessedN[index] == GuessedN[idx])
-                        {
-                            CanNumberChecked = false;
-                        }
-                    }
-                }
-
-                if (CanNumberChecked == true)
-                {
-                    int countA = 0; int countB = 0;
-                    double[] guessarr = new double[4];
-                    for (int index = 0; index < 4; index++)
-                    {
-                        for (int idx = 0; idx < 4; idx++)
-                        {
-                            if (GuessedN[index] == AnswerN[idx])
-                            {
-                                countB = ++countB;
-
-                                if (index == idx)
-                                {
-                                    countB = --countB;
-                                    countA = ++countA;
-                                }
-                            }
-                        }
-                    }
-
+                    
                     double.TryParse(GuessingLabel.Text, out GuessedNumber);
-                    String GuessedNumberTExt = GuessedN[0].ToString() + GuessedN[1].ToString() +
-                        GuessedN[2].ToString() + GuessedN[3].ToString();
+                    CurrentGuessingNumber.Text = GuessingLabel.Text;
 
 
-                    if (countA == 4)
+                    if (guessGame.CheckedResult == 2)
                     {
-                        GuessTime = ++GuessTime;
-                        MessageBox.Show("You tried " + GuessTime + " times and got the answer " + GuessedN[0].ToString() + GuessedN[1].ToString() +
-                        GuessedN[2].ToString() + GuessedN[3].ToString());
+
+                        MessageBox.Show("You tried " + guessGame.GuessTime + " times and got the answer " + guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString());
 
                         guessGame.newGuessStart();
 
-                        MessageBox.Show("A new guess just began.");
+                        MessageBox.Show("Click new guess to play again.");
                     }
-                    else
+                    if (guessGame.CheckedResult == 3)
                     {
-                        MessageBox.Show("You guessed " + GuessedNumberTExt + " " + countA + "A" + countB + "B");
+                        MessageBox.Show("You guessed " + guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString() + " " + guessGame.countA + "A" + guessGame.countB + "B");
                         GuessingLabel.Text = "";
-                        Clicks = 0;
-                        GuessTime = ++GuessTime;
+                        
                     }
 
-                    if (GuessTime == 1)
+                    if (guessGame.GuessTime == 1)
                     {
                         NumberGuessed.Text = GuessedNumber.ToString();
-                        ABcheckLabel.Text = GuessTime + ".   " + countA + "A" + countB + "B";
+                        ABcheckLabel.Text = guessGame.GuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
                     }
                     else
                     {
                         NumberGuessed.Text = NumberGuessed.Text + "\r\n" + GuessedNumber.ToString();
-                        ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + GuessTime + ".   " + countA + "A" + countB + "B";
+                        ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + guessGame.GuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
                     }
-                    CurrentGuessingNumber.Text = NumberGuessed.Text;
+                    
                 }
-                else
-                {
-                    MessageBox.Show("Input Number cannot be repeated.");
-                    Reset();
-                }
+                if (guessGame.CheckedResult==1)
+                {MessageBox.Show("Input Number cannot be repeated.");
+
+                    Resetlabel();
+                                }
             
         }
 
@@ -115,10 +86,10 @@ namespace GuessNumberApplication
             if (guessGame.Clicks <=3) 
             {
 
-                guessGame.GuessedN[Clicks] = GuessingNumber;
-                
+                guessGame.GuessedN[guessGame.Clicks] = GuessingNumber;
 
-            if (DoesFirstClick == true)
+
+                if (guessGame.DoesFirstClick == true)
             {
                 GuessingLabel.Text = GuessingNumber.ToString();
                 guessGame.DoesFirstClick = false;
@@ -138,18 +109,18 @@ namespace GuessNumberApplication
         }
         
 
-        public void Reset()
+        public void Resetlabel()
         {
             GuessingLabel.Text = "";
             InputBox.Text = "";
-            Clicks = 0;
-            CanNumberChecked = true;
-            
+                        
         }
 
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
+            InputBox.Text = InputBox.Text;
+            MessageBox.Show("AA");
             //if (Clicks <= 3)
             //{
             //    Clicks = ++Clicks;
@@ -213,28 +184,32 @@ namespace GuessNumberApplication
 
         private void ResetGuess_Click(object sender, EventArgs e)
         {
-            Reset();
+            Resetlabel();
+            guessGame.Reset();
         }
 
         private void CheckNumber_Click(object sender, EventArgs e)
         {
-            if (Clicks == 4)
+            if (guessGame.Clicks == 4)
             {
-                
 
-                if (CanNumberGuessd == true)
+
+                if (guessGame.CanNumberGuessd == true)
                 {
-                    if (GuessTime == 19)
-                    { 
-                        String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
-                           AnswerN[2].ToString() + AnswerN[3].ToString();
+                    if (guessGame.GuessTime == 19)
+                    {
+                        String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
+                           guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
                         MessageBox.Show("Answer is " + AnswerNumberText + " and you tried " + "20" + " times.");
-                        Reset(); 
+                        Resetlabel();
+                        guessGame.Reset();
                     }
 
                     else
                     {
-                       CheckAnswer(); 
+                       guessGame.CheckAnswer();
+                        CheckAnswer();
+                       
                     }
                     
                     
@@ -246,16 +221,15 @@ namespace GuessNumberApplication
 
         private void newGuess_Click(object sender, EventArgs e)
         {
-
+            
 
             guessGame.newGuessStart();
             GuessingLabel.Text = "";
             InputBox.Text = "";
             NumberGuessed.Text = "0000";
             ABcheckLabel.Text = "1.    XAXB";
-            Reset();
+            Resetlabel();
 
-            guessGame.CanNumberChecked = true;
 
             String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
                        guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
@@ -265,11 +239,11 @@ namespace GuessNumberApplication
         private void Giveup_Click(object sender, EventArgs e)
         {
             InputBox.Text = "Input N here";
-            String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
-                   AnswerN[2].ToString() + AnswerN[3].ToString();
-            MessageBox.Show("Answer is " + AnswerNumberText + " and you tried "+ GuessTime+" times.");
-            CanNumberGuessd = false;
-            CanNumberChecked = true;
+            String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
+                   guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
+            MessageBox.Show("Answer is " + AnswerNumberText + " and you tried " + guessGame.GuessTime + " times.");
+            guessGame.CanNumberGuessd = false;
+            guessGame.CanNumberChecked = true;
         }
 
         private void ABcheckLabel_Click(object sender, EventArgs e)
@@ -291,24 +265,30 @@ namespace GuessNumberApplication
 
         private void AutoRun_Click(object sender, EventArgs e)
         {
-            guessGame.newGuessStart();
+            MessageBox.Show(""+
+            guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString() 
+                        + " " + guessGame.countA + "A" + guessGame.countB + "B"+guessGame.Clicks);
+               
+            
+        //    guessGame.newGuessStart();
 
-            double[] arr2 = new double[4];
-            int b = 1;
-            for (int inde = 0; inde < 4; inde++)
-            {
-                arr2[inde] = b;
-                b = ++b;
-            }
-            GuessedN = arr2;
+        //    double[] arr2 = new double[4];
+        //    int b = 1;
+        //    for (int inde = 0; inde < 4; inde++)
+        //    {
+        //        arr2[inde] = b;
+        //        b = ++b;
+        //    }
+        //    GuessedN = arr2;
 
-            String GuessNumberText = GuessedN[0].ToString() + GuessedN[1].ToString() +
-                   GuessedN[2].ToString() + GuessedN[3].ToString();
-            MessageBox.Show("Your guess is " + GuessNumberText + ".");
-            CheckAnswer();
-            String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
-                   AnswerN[2].ToString() + AnswerN[3].ToString();
-            MessageBox.Show("Answer is " + AnswerNumberText + ".");
+        //    String GuessNumberText = GuessedN[0].ToString() + GuessedN[1].ToString() +
+        //           GuessedN[2].ToString() + GuessedN[3].ToString();
+        //    MessageBox.Show("Your guess is " + GuessNumberText + ".");
+        //    CheckAnswer();
+        //    String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
+        //           AnswerN[2].ToString() + AnswerN[3].ToString();
+        //    MessageBox.Show("Answer is " + AnswerNumberText + ".");
         }
     }
 }

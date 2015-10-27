@@ -19,6 +19,8 @@ namespace GuessNumberApplication
         public int GuessTime = 0;
         public double GuessedNumber = 1235;
         public double AnswerNumber;
+        public int countA = 2; public int countB = 0;
+        public int CheckedResult=0;
 
 
         public void newGuessStart()
@@ -26,9 +28,87 @@ namespace GuessNumberApplication
             CreateAnswer();
             AnswerN = Answer;
             CanNumberGuessd = true;
+            CanNumberChecked = true;
             GuessTime = 0;
+            Reset();
+
         }
-        
+
+        public void CheckAnswer()
+        {
+            countA = 0; countB = 0;
+            for (int index = 0; index < 3; index++)
+            {
+
+                for (int idx = index + 1; idx < 4; idx++)
+                {
+                    if (GuessedN[index] == GuessedN[idx])
+                    {
+                        CanNumberChecked = false;
+                        CheckedResult = 1;
+                    }
+                }
+            }
+
+            if (CanNumberChecked == true)
+            {
+                
+                double[] guessarr = new double[4];
+                for (int index = 0; index < 4; index++)
+                {
+                    for (int idx = 0; idx < 4; idx++)
+                    {
+                        if (GuessedN[index] == AnswerN[idx])
+                        {
+                            countB = ++countB;
+
+                            if (index == idx)
+                            {
+                                countB = --countB;
+                                countA = ++countA;
+                            }
+                        }
+                    }
+                }
+
+
+
+                if (countA == 4)
+                {
+                    GuessTime = ++GuessTime;
+                    CheckedResult = 2;
+
+                    
+                }
+                else
+                {
+                   
+                    Clicks = 0;
+                    GuessTime = ++GuessTime;
+                    CheckedResult = 3;
+                }
+
+               
+            }
+            else
+            {
+
+                Clicks = 0;
+                CanNumberChecked = true;
+                CheckedResult = 4;
+            }
+
+        }
+
+
+        public void Reset()
+        {
+            
+            Clicks = 0;
+            CanNumberChecked = true;
+            CheckedResult = 0;
+
+        }
 
         public void CreateGuessNumber()
         {

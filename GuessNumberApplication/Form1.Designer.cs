@@ -52,9 +52,10 @@
             // CheckNumber
             // 
             this.CheckNumber.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckNumber.Location = new System.Drawing.Point(270, 27);
+            this.CheckNumber.Location = new System.Drawing.Point(372, 39);
+            this.CheckNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CheckNumber.Name = "CheckNumber";
-            this.CheckNumber.Size = new System.Drawing.Size(55, 44);
+            this.CheckNumber.Size = new System.Drawing.Size(76, 65);
             this.CheckNumber.TabIndex = 27;
             this.CheckNumber.Text = "GO";
             this.CheckNumber.UseVisualStyleBackColor = true;
@@ -63,10 +64,11 @@
             // NumberGuessed
             // 
             this.NumberGuessed.BackColor = System.Drawing.Color.Beige;
-            this.NumberGuessed.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumberGuessed.Location = new System.Drawing.Point(135, 87);
+            this.NumberGuessed.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumberGuessed.Location = new System.Drawing.Point(191, 127);
+            this.NumberGuessed.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NumberGuessed.Name = "NumberGuessed";
-            this.NumberGuessed.Size = new System.Drawing.Size(103, 412);
+            this.NumberGuessed.Size = new System.Drawing.Size(137, 604);
             this.NumberGuessed.TabIndex = 26;
             this.NumberGuessed.Text = "0000";
             this.NumberGuessed.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -75,10 +77,11 @@
             // ABcheckLabel
             // 
             this.ABcheckLabel.BackColor = System.Drawing.Color.Beige;
-            this.ABcheckLabel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ABcheckLabel.Location = new System.Drawing.Point(38, 87);
+            this.ABcheckLabel.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ABcheckLabel.Location = new System.Drawing.Point(53, 127);
+            this.ABcheckLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ABcheckLabel.Name = "ABcheckLabel";
-            this.ABcheckLabel.Size = new System.Drawing.Size(103, 412);
+            this.ABcheckLabel.Size = new System.Drawing.Size(152, 604);
             this.ABcheckLabel.TabIndex = 25;
             this.ABcheckLabel.Text = "1.    XAXB";
             this.ABcheckLabel.Click += new System.EventHandler(this.ABcheckLabel_Click);
@@ -87,9 +90,10 @@
             // 
             this.CurrentGuessingNumber.BackColor = System.Drawing.Color.LightGreen;
             this.CurrentGuessingNumber.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentGuessingNumber.Location = new System.Drawing.Point(38, 27);
+            this.CurrentGuessingNumber.Location = new System.Drawing.Point(53, 39);
+            this.CurrentGuessingNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CurrentGuessingNumber.Name = "CurrentGuessingNumber";
-            this.CurrentGuessingNumber.Size = new System.Drawing.Size(200, 44);
+            this.CurrentGuessingNumber.Size = new System.Drawing.Size(275, 65);
             this.CurrentGuessingNumber.TabIndex = 24;
             this.CurrentGuessingNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CurrentGuessingNumber.Click += new System.EventHandler(this.CurrentGuessingNumber_Click);
@@ -98,9 +102,10 @@
             // 
             this.GuessingLabel.BackColor = System.Drawing.Color.LightGreen;
             this.GuessingLabel.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuessingLabel.Location = new System.Drawing.Point(331, 27);
+            this.GuessingLabel.Location = new System.Drawing.Point(455, 39);
+            this.GuessingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GuessingLabel.Name = "GuessingLabel";
-            this.GuessingLabel.Size = new System.Drawing.Size(155, 44);
+            this.GuessingLabel.Size = new System.Drawing.Size(213, 65);
             this.GuessingLabel.TabIndex = 23;
             this.GuessingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.GuessingLabel.Click += new System.EventHandler(this.GuessingLabel_Click);
@@ -108,9 +113,10 @@
             // InputBox
             // 
             this.InputBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputBox.Location = new System.Drawing.Point(331, 87);
+            this.InputBox.Location = new System.Drawing.Point(455, 127);
+            this.InputBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(155, 32);
+            this.InputBox.Size = new System.Drawing.Size(212, 37);
             this.InputBox.TabIndex = 22;
             this.InputBox.Text = "Input N here";
             this.InputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -119,9 +125,10 @@
             // AutoRun
             // 
             this.AutoRun.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AutoRun.Location = new System.Drawing.Point(347, 457);
+            this.AutoRun.Location = new System.Drawing.Point(477, 670);
+            this.AutoRun.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AutoRun.Name = "AutoRun";
-            this.AutoRun.Size = new System.Drawing.Size(140, 42);
+            this.AutoRun.Size = new System.Drawing.Size(193, 61);
             this.AutoRun.TabIndex = 21;
             this.AutoRun.Text = "Auto Run";
             this.AutoRun.UseVisualStyleBackColor = true;
@@ -130,9 +137,10 @@
             // Giveup
             // 
             this.Giveup.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Giveup.Location = new System.Drawing.Point(347, 381);
+            this.Giveup.Location = new System.Drawing.Point(477, 559);
+            this.Giveup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Giveup.Name = "Giveup";
-            this.Giveup.Size = new System.Drawing.Size(140, 42);
+            this.Giveup.Size = new System.Drawing.Size(193, 61);
             this.Giveup.TabIndex = 20;
             this.Giveup.Text = "Give Up";
             this.Giveup.UseVisualStyleBackColor = true;
@@ -141,9 +149,10 @@
             // newGuess
             // 
             this.newGuess.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newGuess.Location = new System.Drawing.Point(347, 333);
+            this.newGuess.Location = new System.Drawing.Point(477, 489);
+            this.newGuess.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.newGuess.Name = "newGuess";
-            this.newGuess.Size = new System.Drawing.Size(140, 42);
+            this.newGuess.Size = new System.Drawing.Size(193, 61);
             this.newGuess.TabIndex = 19;
             this.newGuess.Text = "New Guess";
             this.newGuess.UseVisualStyleBackColor = true;
@@ -152,9 +161,10 @@
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(439, 248);
+            this.button9.Location = new System.Drawing.Point(604, 364);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(48, 47);
+            this.button9.Size = new System.Drawing.Size(66, 68);
             this.button9.TabIndex = 18;
             this.button9.Text = "3";
             this.button9.UseVisualStyleBackColor = true;
@@ -163,9 +173,10 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(439, 195);
+            this.button6.Location = new System.Drawing.Point(604, 286);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 47);
+            this.button6.Size = new System.Drawing.Size(66, 68);
             this.button6.TabIndex = 17;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
@@ -174,9 +185,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(439, 142);
+            this.button3.Location = new System.Drawing.Point(604, 208);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 47);
+            this.button3.Size = new System.Drawing.Size(66, 68);
             this.button3.TabIndex = 16;
             this.button3.Text = "9";
             this.button3.UseVisualStyleBackColor = true;
@@ -185,9 +197,10 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(385, 248);
+            this.button8.Location = new System.Drawing.Point(529, 364);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(48, 47);
+            this.button8.Size = new System.Drawing.Size(66, 68);
             this.button8.TabIndex = 15;
             this.button8.Text = "2";
             this.button8.UseVisualStyleBackColor = true;
@@ -196,9 +209,10 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(385, 195);
+            this.button5.Location = new System.Drawing.Point(529, 286);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 47);
+            this.button5.Size = new System.Drawing.Size(66, 68);
             this.button5.TabIndex = 14;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
@@ -207,9 +221,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(385, 142);
+            this.button2.Location = new System.Drawing.Point(529, 208);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 47);
+            this.button2.Size = new System.Drawing.Size(66, 68);
             this.button2.TabIndex = 13;
             this.button2.Text = "8";
             this.button2.UseVisualStyleBackColor = true;
@@ -218,9 +233,10 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(331, 248);
+            this.button7.Location = new System.Drawing.Point(455, 364);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(48, 47);
+            this.button7.Size = new System.Drawing.Size(66, 68);
             this.button7.TabIndex = 11;
             this.button7.Text = "1";
             this.button7.UseVisualStyleBackColor = true;
@@ -229,9 +245,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(331, 195);
+            this.button4.Location = new System.Drawing.Point(455, 286);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 47);
+            this.button4.Size = new System.Drawing.Size(66, 68);
             this.button4.TabIndex = 12;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
@@ -240,9 +257,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(331, 142);
+            this.button1.Location = new System.Drawing.Point(455, 208);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 47);
+            this.button1.Size = new System.Drawing.Size(66, 68);
             this.button1.TabIndex = 10;
             this.button1.Text = "7";
             this.button1.UseVisualStyleBackColor = true;
@@ -251,9 +269,10 @@
             // ResetGuess
             // 
             this.ResetGuess.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResetGuess.Location = new System.Drawing.Point(492, 87);
+            this.ResetGuess.Location = new System.Drawing.Point(677, 127);
+            this.ResetGuess.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ResetGuess.Name = "ResetGuess";
-            this.ResetGuess.Size = new System.Drawing.Size(29, 32);
+            this.ResetGuess.Size = new System.Drawing.Size(40, 46);
             this.ResetGuess.TabIndex = 28;
             this.ResetGuess.Text = "C";
             this.ResetGuess.UseVisualStyleBackColor = true;
@@ -261,9 +280,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 526);
+            this.ClientSize = new System.Drawing.Size(722, 779);
             this.Controls.Add(this.ResetGuess);
             this.Controls.Add(this.CheckNumber);
             this.Controls.Add(this.NumberGuessed);
@@ -283,8 +302,10 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Guess the Number";
             this.ResumeLayout(false);
             this.PerformLayout();
 
