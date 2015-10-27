@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameLibrary;
 
 namespace GuessNumberApplication
 {
@@ -26,7 +27,7 @@ namespace GuessNumberApplication
         public double[] GuessedN = new double[4];
         public double AnswerNumber;
         public double[] AnswerN = new double[4];
-        Game guessGame = new Game();
+        GameLibrary.Game guessGame = new GameLibrary.Game();
 
 
         
