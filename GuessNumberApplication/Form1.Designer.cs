@@ -115,8 +115,9 @@
             this.InputBox.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputBox.Location = new System.Drawing.Point(455, 127);
             this.InputBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.InputBox.MaxLength = 4;
             this.InputBox.Name = "InputBox";
-            this.InputBox.Size = new System.Drawing.Size(212, 37);
+            this.InputBox.Size = new System.Drawing.Size(212, 32);
             this.InputBox.TabIndex = 22;
             this.InputBox.Text = "Input N here";
             this.InputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -280,7 +281,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 779);
             this.Controls.Add(this.ResetGuess);

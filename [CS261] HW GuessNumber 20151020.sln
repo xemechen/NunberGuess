@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessNumberApplication", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLibrary", "GameLibrary\GameLibrary.csproj", "{8FEC33C5-F0B2-4E7E-BD30-692F19353C23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLibrary1", "GameLibrary1\GameLibrary1.csproj", "{5122696B-1983-4339-A604-499C033D5E64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8FEC33C5-F0B2-4E7E-BD30-692F19353C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FEC33C5-F0B2-4E7E-BD30-692F19353C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FEC33C5-F0B2-4E7E-BD30-692F19353C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5122696B-1983-4339-A604-499C033D5E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5122696B-1983-4339-A604-499C033D5E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5122696B-1983-4339-A604-499C033D5E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5122696B-1983-4339-A604-499C033D5E64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

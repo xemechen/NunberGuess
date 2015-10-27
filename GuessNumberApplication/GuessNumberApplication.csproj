@@ -79,6 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameLibrary1\GameLibrary1.csproj">
+      <Project>{5122696b-1983-4339-a604-499c033d5e64}</Project>
+      <Name>GameLibrary1</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameLibrary\GameLibrary.csproj">
       <Project>{8fec33c5-f0b2-4e7e-bd30-692f19353c23}</Project>
       <Name>GameLibrary</Name>

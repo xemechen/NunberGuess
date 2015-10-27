@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GameLibrary;
+using GameLibrary1;
 
 namespace GuessNumberApplication
 {
@@ -27,27 +27,28 @@ namespace GuessNumberApplication
         public double[] GuessedN = new double[4];
         public double AnswerNumber;
         public double[] AnswerN = new double[4];
-        GameLibrary.Game guessGame = new GameLibrary.Game();
+        public bool CanInputStart = true;
+        GameLibrary1.Game guessGame = new GameLibrary1.Game();
 
 
         
 
         public void CheckAnswer()
         {
-
-
-
+            
             if (guessGame.CanNumberChecked == true)
                 {
                     
-                    double.TryParse(GuessingLabel.Text, out GuessedNumber);
+                    
                     CurrentGuessingNumber.Text = GuessingLabel.Text;
-
+                    InputBox.Text = "";
+                    int TempGuessTime = guessGame.GuessTime;
 
                     if (guessGame.CheckedResult == 2)
                     {
+                        TempGuessTime = guessGame.GuessTime;
 
-                        MessageBox.Show("You tried " + guessGame.GuessTime + " times and got the answer " + guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        MessageBox.Show("You tried " + guessGame.GuessTime + " time(s) and got the answer " + guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
                         guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString());
 
                         guessGame.newGuessStart();
@@ -59,26 +60,33 @@ namespace GuessNumberApplication
                         MessageBox.Show("You guessed " + guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
                         guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString() + " " + guessGame.countA + "A" + guessGame.countB + "B");
                         GuessingLabel.Text = "";
-                        
+                        TempGuessTime = guessGame.GuessTime;
+                    }
+                    if (guessGame.CheckedResult == 1)
+                    {
+                        MessageBox.Show("Input Number cannot be repeated.");
+
+                        Resetlabel();
                     }
 
-                    if (guessGame.GuessTime == 1)
+                    if (TempGuessTime == 1 && guessGame.CheckedResult!=1)
                     {
-                        NumberGuessed.Text = GuessedNumber.ToString();
-                        ABcheckLabel.Text = guessGame.GuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
+                        NumberGuessed.Text = guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString();
+                        ABcheckLabel.Text = TempGuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
                     }
-                    else
+                    else if (guessGame.CheckedResult!=1)
                     {
-                        NumberGuessed.Text = NumberGuessed.Text + "\r\n" + GuessedNumber.ToString();
-                        ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + guessGame.GuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
+                        NumberGuessed.Text = NumberGuessed.Text + "\r\n" + guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString();
+
+                        if (guessGame.GuessTime >= 10)
+                            ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + TempGuessTime + ". " + guessGame.countA + "A" + guessGame.countB + "B";
+                        else ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + TempGuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
                     }
                     
                 }
-                if (guessGame.CheckedResult==1)
-                {MessageBox.Show("Input Number cannot be repeated.");
-
-                    Resetlabel();
-                                }
+            
             
         }
 
@@ -120,8 +128,11 @@ namespace GuessNumberApplication
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            InputBox.Text = InputBox.Text;
-            MessageBox.Show("AA");
+            if (CanInputStart == true)
+            { InputBox.Text = "";
+            CanInputStart = false;
+            }
+
             //if (Clicks <= 3)
             //{
             //    Clicks = ++Clicks;
@@ -191,6 +202,22 @@ namespace GuessNumberApplication
 
         private void CheckNumber_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            char[] TempGuessedN = InputBox.Text.ToCharArray();
+            if (TempGuessedN.Length == 4)
+            {
+                for (int index1 = 0; index1 < 4; index1++)
+                {
+                    guessGame.GuessedN[index1] = char.GetNumericValue(TempGuessedN[index1]);
+                    
+                }
+                GuessingLabel.Text = guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString();
+                guessGame.Clicks = 4;
+            }
+            
             if (guessGame.Clicks == 4)
             {
 
