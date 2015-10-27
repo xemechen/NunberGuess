@@ -17,7 +17,7 @@ namespace GuessNumberApplication
         public double[] GuessedN = new double[4];
         public double[] AnswerN = new double[4];
         public int GuessTime = 0;
-        public double GuessedNumber = 1234;
+        public double GuessedNumber = 1235;
         public double AnswerNumber;
 
 
