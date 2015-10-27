@@ -29,18 +29,7 @@ namespace GuessNumberApplication
         Game guessGame = new Game();
 
 
-        public void newGuessStart()
-        {
-            guessGame.CreateAnswer();
-            AnswerN = guessGame.Answer;
-            GuessingLabel.Text = "";
-            InputBox.Text = "";
-            NumberGuessed.Text = "0000";
-            ABcheckLabel.Text = "1.    XAXB";
-            CanNumberGuessd = true;
-            Reset();
-            GuessTime = 0;
-        }
+        
 
         public void CheckAnswer()
         {
@@ -88,7 +77,9 @@ namespace GuessNumberApplication
                         GuessTime = ++GuessTime;
                         MessageBox.Show("You tried " + GuessTime + " times and got the answer " + GuessedN[0].ToString() + GuessedN[1].ToString() +
                         GuessedN[2].ToString() + GuessedN[3].ToString());
-                        newGuessStart();
+
+                        guessGame.newGuessStart();
+
                         MessageBox.Show("A new guess just began.");
                     }
                     else
@@ -121,22 +112,22 @@ namespace GuessNumberApplication
 
         public void UpdateGuessingLabel(double GuessingNumber)
         {
-            if (Clicks <=3) 
+            if (guessGame.Clicks <=3) 
             {
 
-                GuessedN[Clicks] = GuessingNumber;
+                guessGame.GuessedN[Clicks] = GuessingNumber;
                 
 
             if (DoesFirstClick == true)
             {
                 GuessingLabel.Text = GuessingNumber.ToString();
-                DoesFirstClick = false;
-                Clicks = ++Clicks;
+                guessGame.DoesFirstClick = false;
+                guessGame.Clicks = ++guessGame.Clicks;
             }
             else
             {
             GuessingLabel.Text = GuessingLabel.Text + GuessingNumber.ToString();
-            Clicks = ++Clicks;
+            guessGame.Clicks = ++guessGame.Clicks;
             }
 
            
@@ -215,7 +206,7 @@ namespace GuessNumberApplication
             UpdateGuessingLabel(9);
         }
 
-        private void GuessingLabel_Click(object sender, EventArgs e)
+        public void GuessingLabel_Click(object sender, EventArgs e)
         {
             
         }
@@ -257,12 +248,18 @@ namespace GuessNumberApplication
         {
 
 
-            newGuessStart();
-            CanNumberChecked = true;
+            guessGame.newGuessStart();
+            GuessingLabel.Text = "";
+            InputBox.Text = "";
+            NumberGuessed.Text = "0000";
+            ABcheckLabel.Text = "1.    XAXB";
+            Reset();
 
-                String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
-                       AnswerN[2].ToString() + AnswerN[3].ToString();
-                MessageBox.Show("Answer is " + AnswerNumberText + " with " + GuessTime + " times guessing.");
+            guessGame.CanNumberChecked = true;
+
+            String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
+                       guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
+            MessageBox.Show("Answer is " + AnswerNumberText + " with " + guessGame.GuessTime + " times guessing.");
         }
 
         private void Giveup_Click(object sender, EventArgs e)
@@ -294,7 +291,7 @@ namespace GuessNumberApplication
 
         private void AutoRun_Click(object sender, EventArgs e)
         {
-            newGuessStart();
+            guessGame.newGuessStart();
 
             double[] arr2 = new double[4];
             int b = 1;

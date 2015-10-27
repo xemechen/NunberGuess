@@ -10,6 +10,25 @@ namespace GuessNumberApplication
     {
         public double[] Answer = new double[4];
         public double[] Guess = new double[4];
+        public bool DoesFirstClick = false;
+        public bool CanNumberGuessd = false;
+        public bool CanNumberChecked = true;
+        public int Clicks=0;
+        public double[] GuessedN = new double[4];
+        public double[] AnswerN = new double[4];
+        public int GuessTime = 0;
+        public double GuessedNumber = 1234;
+        public double AnswerNumber;
+
+
+        public void newGuessStart()
+        {
+            CreateAnswer();
+            AnswerN = Answer;
+            CanNumberGuessd = true;
+            GuessTime = 0;
+        }
+        
 
         public void CreateGuessNumber()
         {
