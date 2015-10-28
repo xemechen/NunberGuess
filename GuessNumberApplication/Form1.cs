@@ -52,8 +52,11 @@ namespace GuessNumberApplication
                         guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString());
 
                         guessGame.newGuessStart();
+                        guessGame.Clicks = 4;
+                        guessGame.GuessTime = 19;
 
                         MessageBox.Show("Click new guess to play again.");
+
                     }
                     if (guessGame.CheckedResult == 3)
                     {
@@ -81,7 +84,7 @@ namespace GuessNumberApplication
                         guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString();
 
                         if (guessGame.GuessTime >= 10)
-                            ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + TempGuessTime + ". " + guessGame.countA + "A" + guessGame.countB + "B";
+                            ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + TempGuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
                         else ABcheckLabel.Text = ABcheckLabel.Text + "\r\n" + TempGuessTime + ".   " + guessGame.countA + "A" + guessGame.countB + "B";
                     }
                     
@@ -189,6 +192,11 @@ namespace GuessNumberApplication
             UpdateGuessingLabel(9);
         }
 
+        private void buttonfor0_Click(object sender, EventArgs e)
+        {
+            UpdateGuessingLabel(0);
+        }
+
         public void GuessingLabel_Click(object sender, EventArgs e)
         {
             
@@ -228,7 +236,7 @@ namespace GuessNumberApplication
                     {
                         String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
                            guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
-                        MessageBox.Show("Answer is " + AnswerNumberText + " and you tried " + "20" + " times.");
+                        MessageBox.Show("Click New Guess and try again.");
                         Resetlabel();
                         guessGame.Reset();
                     }
@@ -318,5 +326,7 @@ namespace GuessNumberApplication
         //           AnswerN[2].ToString() + AnswerN[3].ToString();
         //    MessageBox.Show("Answer is " + AnswerNumberText + ".");
         }
+
+        
     }
 }
