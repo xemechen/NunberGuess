@@ -245,7 +245,7 @@ namespace GuessNumberApplication
                     {
                        guessGame.CheckAnswer();
                         CheckAnswer();
-                       
+                        Scorelabel.Text = "Score: \n   " + guessGame.GameScore;
                     }
                     
                     
@@ -266,7 +266,7 @@ namespace GuessNumberApplication
             ABcheckLabel.Text = "1.    XAXB";
             Resetlabel();
 
-
+            Scorelabel.Text = "Score: \n   " + guessGame.GameScore;
             String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
                        guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
             MessageBox.Show("Answer is " + AnswerNumberText + " with " + guessGame.GuessTime + " times guessing.");
@@ -325,6 +325,11 @@ namespace GuessNumberApplication
         //    String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
         //           AnswerN[2].ToString() + AnswerN[3].ToString();
         //    MessageBox.Show("Answer is " + AnswerNumberText + ".");
+        }
+
+        private void Scorelabel_Click(object sender, EventArgs e)
+        {
+            
         }
 
         

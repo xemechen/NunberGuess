@@ -48,6 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ResetGuess = new System.Windows.Forms.Button();
             this.buttonfor0 = new System.Windows.Forms.Button();
+            this.Scorelabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // CheckNumber
@@ -292,11 +293,22 @@
             this.buttonfor0.UseVisualStyleBackColor = true;
             this.buttonfor0.Click += new System.EventHandler(this.buttonfor0_Click);
             // 
+            // Scorelabel
+            // 
+            this.Scorelabel.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scorelabel.Location = new System.Drawing.Point(349, 127);
+            this.Scorelabel.Name = "Scorelabel";
+            this.Scorelabel.Size = new System.Drawing.Size(87, 70);
+            this.Scorelabel.TabIndex = 30;
+            this.Scorelabel.Text = "Score:";
+            this.Scorelabel.Click += new System.EventHandler(this.Scorelabel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 779);
+            this.Controls.Add(this.Scorelabel);
             this.Controls.Add(this.buttonfor0);
             this.Controls.Add(this.ResetGuess);
             this.Controls.Add(this.CheckNumber);
@@ -348,6 +360,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ResetGuess;
         private System.Windows.Forms.Button buttonfor0;
+        private System.Windows.Forms.Label Scorelabel;
     }
 }
 
