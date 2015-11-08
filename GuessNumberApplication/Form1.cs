@@ -128,6 +128,13 @@ namespace GuessNumberApplication
                         
         }
 
+        private void InputBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.CheckNumber_Click(sender, e);
+            }
+        }
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
@@ -280,6 +287,8 @@ namespace GuessNumberApplication
             MessageBox.Show("Answer is " + AnswerNumberText + " and you tried " + guessGame.GuessTime + " times.");
             guessGame.CanNumberGuessd = false;
             guessGame.CanNumberChecked = true;
+
+            
         }
 
         private void ABcheckLabel_Click(object sender, EventArgs e)
@@ -301,12 +310,120 @@ namespace GuessNumberApplication
 
         private void AutoRun_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(""+
-            guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
-                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString() 
-                        + " " + guessGame.countA + "A" + guessGame.countB + "B"+guessGame.Clicks);
-               
+            if (comboBoxToRun.SelectedIndex == -1)
+                MessageBox.Show("You need to pick one.");
+            else
+            {
+                showNumberText = "";
+                string TempText = comboBoxToRun.SelectedItem.ToString();
+                int TempItem;
+                int.TryParse(TempText, out TempItem);
+                if (TempItem == 100 || TempItem == 500 || TempItem == 800)
+                { guessGame.PCRunGame(TempItem); }
+
+                for (int index = 0; index < 9; index++)
+                {
+                    int arr1 = (index + 1);
+                    showNumberText = showNumberText + guessGame.StatsOfAutoRun[arr1, 0].ToString() + "      --      " + guessGame.StatsOfAutoRun[arr1, 1].ToString() +
+                         " \r\n";
+                }
+                for (int index = 9; index < 13; index++)
+                {
+                    int arr1 = (index + 1);
+                    showNumberText = showNumberText + guessGame.StatsOfAutoRun[arr1, 0].ToString() + "     --     " + guessGame.StatsOfAutoRun[arr1, 1].ToString() +
+                         " \r\n";
+                }
+
+                showNumberText = "With " + TempItem.ToString() + " times gaming\r\n\r\n" + "Average times is " + guessGame.AverageGuessTime.ToString() + "\r\n\r\n" +
+                    "Times      Counts\r\n"+showNumberText ;
+                Scorelabel.Text = "Score: \n   " + guessGame.GameScore;
+                MessageBox.Show(showNumberText);
+            }
+        }
+
+        private void Scorelabel_Click(object sender, EventArgs e)
+        {
             
+        }
+
+
+        
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxToRun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        public string showNumberText = "";
+        public string showGuessNumberText = "";
+        public string showPotenNumberText = "";
+        public void showNumber(int intt, int inttt, int SeeGuess)//to check Auto run list
+        {
+            showNumberText = ""; showGuessNumberText = "";
+            inttt = ++inttt;
+            for (int index = intt; index < inttt; index++)
+            {
+                int arr1 = (index - 1);
+                showNumberText = showNumberText + guessGame.AllNumbers[arr1, 0].ToString() + " " + guessGame.AllNumbers[arr1, 1].ToString() + guessGame.AllNumbers[arr1, 2].ToString()
+
+                    + guessGame.AllNumbers[arr1, 3].ToString() + guessGame.AllNumbers[arr1, 4].ToString() + " " + guessGame.AllNumbers[arr1, 5].ToString() + "\r\n";
+            }
+
+            for (int index = 1; index < SeeGuess; index++)
+            {
+                int arr1 = (index - 1);
+                showNumberText = showNumberText + guessGame.AllGuessPC[arr1, 0].ToString() + " " + guessGame.AllGuessPC[arr1, 1].ToString() + guessGame.AllGuessPC[arr1, 2].ToString()
+
+                    + guessGame.AllGuessPC[arr1, 3].ToString() + guessGame.AllGuessPC[arr1, 4].ToString() + " " + guessGame.AllGuessPC[arr1, 5].ToString() +
+                    " " + guessGame.AllGuessPC[arr1, 6].ToString() + "A" + guessGame.AllGuessPC[arr1, 7].ToString() + "B\r\n";
+            }
+        }
+
+        public void showPotentialAnswer() //to check Auto run
+        {
+            showPotenNumberText = "";
+            for (int index = 0; index < 5040; index++)
+            {
+                if (guessGame.AllNumbers[index, 5] == 1)
+                {
+                    int arr1 = index;
+                    showPotenNumberText = showPotenNumberText + guessGame.AllNumbers[arr1, 0].ToString() + " " + guessGame.AllNumbers[arr1, 1].ToString() + guessGame.AllNumbers[arr1, 2].ToString()
+
+                        + guessGame.AllNumbers[arr1, 3].ToString() + guessGame.AllNumbers[arr1, 4].ToString() + " " + guessGame.AllNumbers[arr1, 5].ToString() + "\r\n";
+                }
+            }
+            MessageBox.Show("" + showPotenNumberText);
+        }
+
+        private void CheckButton_Click(object sender, EventArgs e)
+        {
+            guessGame.AutoRunGame();
+            String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
+                       guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
+            MessageBox.Show("Answer is " + AnswerNumberText + ".");
+
+
+            MessageBox.Show("" +
+            guessGame.GuessedN[0].ToString() + guessGame.GuessedN[1].ToString() +
+                        guessGame.GuessedN[2].ToString() + guessGame.GuessedN[3].ToString()
+                        + " " + guessGame.countA + "A" + guessGame.countB + "B" + guessGame.GuessTime.ToString());
+
+            showNumber(1, 1, 15);
+            MessageBox.Show(showNumberText);
+
+            showPotentialAnswer();
+            
+
+            MessageBox.Show(guessGame.rdNumber + " " + guessGame.GuessTime.ToString()+" " + guessGame.AverageGuessTime.ToString());
+           
+
+             
+
         //    guessGame.newGuessStart();
 
         //    double[] arr2 = new double[4];
@@ -325,11 +442,6 @@ namespace GuessNumberApplication
         //    String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
         //           AnswerN[2].ToString() + AnswerN[3].ToString();
         //    MessageBox.Show("Answer is " + AnswerNumberText + ".");
-        }
-
-        private void Scorelabel_Click(object sender, EventArgs e)
-        {
-            
         }
 
         

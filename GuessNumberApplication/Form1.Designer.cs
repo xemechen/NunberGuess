@@ -49,6 +49,8 @@
             this.ResetGuess = new System.Windows.Forms.Button();
             this.buttonfor0 = new System.Windows.Forms.Button();
             this.Scorelabel = new System.Windows.Forms.Label();
+            this.comboBoxToRun = new System.Windows.Forms.ComboBox();
+            this.CheckButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CheckNumber
@@ -303,11 +305,37 @@
             this.Scorelabel.Text = "Score:";
             this.Scorelabel.Click += new System.EventHandler(this.Scorelabel_Click);
             // 
+            // comboBoxToRun
+            // 
+            this.comboBoxToRun.FormattingEnabled = true;
+            this.comboBoxToRun.Items.AddRange(new object[] {
+            100,
+            500,
+            800});
+            this.comboBoxToRun.Location = new System.Drawing.Point(502, 636);
+            this.comboBoxToRun.Name = "comboBoxToRun";
+            this.comboBoxToRun.Size = new System.Drawing.Size(167, 26);
+            this.comboBoxToRun.TabIndex = 32;
+            this.comboBoxToRun.Text = "Times of AutoRun";
+            this.comboBoxToRun.SelectedIndexChanged += new System.EventHandler(this.comboBoxToRun_SelectedIndexChanged);
+            // 
+            // CheckButton
+            // 
+            this.CheckButton.Location = new System.Drawing.Point(335, 572);
+            this.CheckButton.Name = "CheckButton";
+            this.CheckButton.Size = new System.Drawing.Size(113, 63);
+            this.CheckButton.TabIndex = 33;
+            this.CheckButton.Text = "CheckButton";
+            this.CheckButton.UseVisualStyleBackColor = true;
+            this.CheckButton.Click += new System.EventHandler(this.CheckButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 779);
+            this.Controls.Add(this.CheckButton);
+            this.Controls.Add(this.comboBoxToRun);
             this.Controls.Add(this.Scorelabel);
             this.Controls.Add(this.buttonfor0);
             this.Controls.Add(this.ResetGuess);
@@ -361,6 +389,8 @@
         private System.Windows.Forms.Button ResetGuess;
         private System.Windows.Forms.Button buttonfor0;
         private System.Windows.Forms.Label Scorelabel;
+        private System.Windows.Forms.ComboBox comboBoxToRun;
+        private System.Windows.Forms.Button CheckButton;
     }
 }
 
