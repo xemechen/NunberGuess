@@ -127,6 +127,7 @@
             this.InputBox.Text = "Input N here";
             this.InputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.InputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
+            this.InputBox.KeyDown += InputBox_KeyDown;
             // 
             // AutoRun
             // 
