@@ -51,6 +51,7 @@
             this.Scorelabel = new System.Windows.Forms.Label();
             this.comboBoxToRun = new System.Windows.Forms.ComboBox();
             this.CheckButton = new System.Windows.Forms.Button();
+            this.GetAnswer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CheckNumber
@@ -321,19 +322,30 @@
             // 
             // CheckButton
             // 
-            this.CheckButton.Location = new System.Drawing.Point(335, 572);
+            this.CheckButton.Location = new System.Drawing.Point(641, 739);
             this.CheckButton.Name = "CheckButton";
-            this.CheckButton.Size = new System.Drawing.Size(113, 63);
+            this.CheckButton.Size = new System.Drawing.Size(76, 30);
             this.CheckButton.TabIndex = 33;
-            this.CheckButton.Text = "CheckButton";
+            this.CheckButton.Text = "DBug";
             this.CheckButton.UseVisualStyleBackColor = true;
             this.CheckButton.Click += new System.EventHandler(this.CheckButton_Click);
+            // 
+            // GetAnswer
+            // 
+            this.GetAnswer.Location = new System.Drawing.Point(347, 587);
+            this.GetAnswer.Name = "GetAnswer";
+            this.GetAnswer.Size = new System.Drawing.Size(100, 33);
+            this.GetAnswer.TabIndex = 34;
+            this.GetAnswer.Text = "GetAnswer";
+            this.GetAnswer.UseVisualStyleBackColor = true;
+            this.GetAnswer.Click += new System.EventHandler(this.GetAnswer_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 779);
+            this.Controls.Add(this.GetAnswer);
             this.Controls.Add(this.CheckButton);
             this.Controls.Add(this.comboBoxToRun);
             this.Controls.Add(this.Scorelabel);
@@ -391,6 +403,7 @@
         private System.Windows.Forms.Label Scorelabel;
         private System.Windows.Forms.ComboBox comboBoxToRun;
         private System.Windows.Forms.Button CheckButton;
+        private System.Windows.Forms.Button GetAnswer;
     }
 }
 

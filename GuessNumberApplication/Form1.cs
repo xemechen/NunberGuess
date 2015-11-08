@@ -274,9 +274,7 @@ namespace GuessNumberApplication
             Resetlabel();
 
             Scorelabel.Text = "Score: \n   " + guessGame.GameScore;
-            String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
-                       guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
-            MessageBox.Show("Answer is " + AnswerNumberText + " with " + guessGame.GuessTime + " times guessing.");
+            
         }
 
         private void Giveup_Click(object sender, EventArgs e)
@@ -442,6 +440,13 @@ namespace GuessNumberApplication
         //    String AnswerNumberText = AnswerN[0].ToString() + AnswerN[1].ToString() +
         //           AnswerN[2].ToString() + AnswerN[3].ToString();
         //    MessageBox.Show("Answer is " + AnswerNumberText + ".");
+        }
+
+        private void GetAnswer_Click(object sender, EventArgs e)
+        {
+            String AnswerNumberText = guessGame.AnswerN[0].ToString() + guessGame.AnswerN[1].ToString() +
+                       guessGame.AnswerN[2].ToString() + guessGame.AnswerN[3].ToString();
+            MessageBox.Show("Answer is " + AnswerNumberText + ".");
         }
 
         
